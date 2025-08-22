@@ -33,7 +33,7 @@ INSERT INTO Pedidos (Data_do_Pedido, Valor_Total, ID_Cliente) VALUES
 SELECT * FROM Pedidos;
 
 --Só inserir para pedidos existentes
-INSERT INTO Itens_Pedido (ID_Pedido, ID_Produto, Qualidade) VALUES
+INSERT INTO Itens_Pedido (ID_Pedido, ID_Produto, Quantidade) VALUES
 --Pedido 1
 (1,1,1), --Notebook
 (1,2,1), --Mouse
@@ -66,3 +66,17 @@ INSERT INTO Pedidos(Data_do_Pedido, Valor_Total, ID_Cliente) VALUES
 ('2025-08-21', 500.00, 2); --Judite Costa
 
 SELECT * FROM Pedidos 
+
+--Inserir itens dos novos pedidos
+INSERT INTO itens_pedido (ID_Pedido, ID_Produto, Quantidade) VALUES
+(4, 1, 1), --NOTEBOOOK
+(4, 3, 1), --Teclado
+(5, 5, 1), --Headset Gamer
+(6, 2, 2), --Mouse sem fio
+(6, 4, 1), --Monitor
+(7, 3, 1), --Teclado
+(7, 5, 1); --Headset Gamer
+
+--Valor médio dos pedidos
+SELECT AVG (Valor_Total) AS Media_Pedidos
+FROM Pedidos;
