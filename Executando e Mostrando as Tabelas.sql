@@ -4,6 +4,7 @@ FROM sys.tables;
 
 --Inserir Clientes
 INSERT INTO Clientes (Nome, Email, Telefone) VALUES
+('Carla Santos', 'carlasantos@email.com', '1199999-1233'),
 ('Cassia Silva', 'ana@email.com', '1199999-1111'),
 ('Judite Costa', 'judcosta@emai.com', '1199999-2222'),
 ('Carla Souza', 'carla@email.com', '1199999-3333');
@@ -15,7 +16,7 @@ SELECT * FROM Clientes;
 INSERT INTO Produtos (Nome_do_Produto, Preco) VALUES
 ('Notebook', 3500.00),
 ('Mouse sem fio', 80.00),
-('Teclado mec‚nico', 250.00),
+('Teclado mec√¢nico', 250.00),
 ('Monitor 24 polegadas', 900.00),
 ('Headset Gamer', 300.00);
 
@@ -31,7 +32,7 @@ INSERT INTO Pedidos (Data_do_Pedido, Valor_Total, ID_Cliente) VALUES
 
 SELECT * FROM Pedidos;
 
---SÛ inserir para pedidos existentes
+--S√≥ inserir para pedidos existentes
 INSERT INTO Itens_Pedido (ID_Pedido, ID_Produto, Qualidade) VALUES
 --Pedido 1
 (1,1,1), --Notebook
@@ -48,3 +49,20 @@ INSERT INTO Itens_Pedido (ID_Pedido, ID_Produto, Qualidade) VALUES
 
 --Conferir itens de pedidos
 SELECT * FROM Itens_Pedido;
+
+SELECT*
+FROM Clientes
+WHERE Nome LIKE 'Carla%';
+
+--Atualizar o telefone de um cliente
+UPDATE Clientes
+SET Telefone = '1199999-3344'
+WHERE Nome = 'Carla Souza';
+
+INSERT INTO Pedidos(Data_do_Pedido, Valor_Total, ID_Cliente) VALUES
+('2025-08-18', 3800.00, 1), --Cassia Silva
+('2025-08-19', 450.00, 2), --Judite Costa
+('2025-08-20', 950.00, 3), --Carla Souza
+('2025-08-21', 500.00, 2); --Judite Costa
+
+SELECT * FROM Pedidos 
