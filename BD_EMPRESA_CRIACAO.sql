@@ -29,14 +29,14 @@ CREATE TABLE Produtos(
 
 --TABELA Itens_Pedido
 CREATE TABLE Itens_Pedido(
+	Quantidade INT NOT NULL,
 	ID_Item INT IDENTITY PRIMARY KEY,
 	ID_Pedido INT,
 	ID_Produto INT,
-	Qualidade INT NOT NULL,
 	FOREIGN KEY (ID_Pedido) REFERENCES Pedidos(ID_Pedido)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY (ID_Produto) REFERENCES Produtos(ID_Produtos)
-	--ON DELETE RESTRICT (funÁ„o apenas do Mysql, no sql server j· È padr„o)
+	--ON DELETE RESTRICT (fun√ß√£o apenas do Mysql, no sql server j√° √© padr√£o)
 	ON UPDATE CASCADE
 );
